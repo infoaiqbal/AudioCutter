@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { UploadCloud, Scissors, FileAudio, CheckCircle2, Download, Moon, Sun, Loader2, AlertCircle, History, Info, X } from 'lucide-react';
+import { UploadCloud, Scissors, FileAudio, CheckCircle2, Download, Moon, Sun, Loader2, AlertCircle, History, Info, X, User } from 'lucide-react';
 import { cn } from './lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
 import { trimAudio } from './lib/audio';
@@ -16,7 +16,7 @@ export default function App() {
     return (localStorage.getItem('theme') as 'light' | 'dark') || 'dark';
   });
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [drawerView, setDrawerView] = useState<'menu' | 'history' | 'about'>('menu');
+  const [drawerView, setDrawerView] = useState<'menu' | 'history' | 'about' | 'developer'>('menu');
   const [file, setFile] = useState<File | null>(null);
   const [fileUrl, setFileUrl] = useState<string | null>(null);
 
@@ -193,7 +193,7 @@ export default function App() {
                     </div>
                   )}
                   <h2 className="text-xl font-display font-bold text-gray-900 dark:text-white uppercase tracking-tight">
-                    {drawerView === 'history' ? 'হিস্ট্রি' : drawerView === 'about' ? 'অ্যাপ সম্পর্কে' : 'অডিও কাটার'}
+                    {drawerView === 'history' ? 'হিস্ট্রি' : drawerView === 'about' ? 'অ্যাপ সম্পর্কে' : drawerView === 'developer' ? 'ডেভেলপার সম্পর্কে' : 'অডিও কাটার'}
                   </h2>
                 </div>
                 <button onClick={() => { setIsDrawerOpen(false); setDrawerView('menu'); }} className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-gray-400 transition-colors">
@@ -214,6 +214,12 @@ export default function App() {
                       <Info size={18} />
                     </span>
                     অ্যাপ সম্পর্কে
+                  </button>
+                  <button onClick={() => setDrawerView('developer')} className="flex items-center gap-4 w-full p-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300 transition-all font-medium border border-transparent hover:border-gray-200 dark:hover:border-white/5 text-left font-display">
+                    <span className="w-10 h-10 rounded-full bg-cyan-100 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+                      <User size={18} />
+                    </span>
+                    ডেভেলপার সম্পর্কে
                   </button>
                 </div>
               )}
@@ -262,6 +268,42 @@ export default function App() {
                     </div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-base">দ্রুত ও কার্যকরী</h3>
                     <p>ডিভাইসের লোকাল প্রসেসর ব্যবহার করার কারণে অডিও এক্সট্রাকশন ও কাটিং দ্রুত হয়। যেকোনো সাইজের ফাইল সহজেই ম্যানেজ করা যায়।</p>
+                  </div>
+                </div>
+              )}
+
+              {drawerView === 'developer' && (
+                <div className="flex flex-col gap-4 flex-grow text-gray-600 dark:text-gray-300 text-sm leading-relaxed overflow-y-auto">
+                  <div className="p-5 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-950/20 dark:to-blue-950/20 rounded-2xl border border-cyan-100 dark:border-cyan-900/30 flex flex-col items-center text-center">
+                    <div className="w-20 h-20 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-full flex items-center justify-center mb-4 text-[#09090b] shadow-lg text-2xl font-bold font-display">
+                      MD
+                    </div>
+                    <h3 className="font-bold text-gray-900 dark:text-white text-lg">আসিফ ইকবাল</h3>
+                    <p className="text-xs text-cyan-600 dark:text-cyan-400 font-medium mb-3">ফুল স্ট্যাক ওয়েব ডেভেলপার</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 px-2 leading-relaxed">
+                      আমি আধুনিক ওয়েব অ্যাপ্লিকেশন তৈরি করতে এবং উন্নত ইউজার এক্সপেরিয়েন্স ডিজাইন করতে পছন্দ করি।
+                    </p>
+                  </div>
+                  
+                  <div className="p-4 bg-gray-50 dark:bg-white/5 rounded-2xl border border-gray-100 dark:border-white/10 space-y-3">
+                    <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                      <span className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                      </span>
+                      <div className="truncate">
+                        <p className="text-[10px] text-gray-400">ইমেইল</p>
+                        <p className="text-xs font-semibold truncate">web.asifio@gmail.com</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                      <span className="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                      </span>
+                      <div className="truncate">
+                        <p className="text-[10px] text-gray-400">গিথাব</p>
+                        <p className="text-xs font-semibold">github.com/asifio</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}

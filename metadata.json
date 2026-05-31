@@ -1,6 +1,6 @@
 {
-  "name": "Vocal Extractor",
-  "description": "An audio tool to extract and isolate vocals from music tracks using browser-based audio processing with a drag-and-drop interface and light/dark theme.",
+  "name": "Audio Cutter",
+  "description": "একটি নিরাপদ ও চমৎকার সম্পূর্ণ ব্রাউজার-ভিত্তিক প্রাইভেসী-ফ্রেন্ডলি অডিও কাটার টুল যার মাধ্যমে যেকোনো ট্র্যাক মুহুর্তেই কেটে নেওয়া যায়।",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
