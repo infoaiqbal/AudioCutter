@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { UploadCloud, Scissors, FileAudio, CheckCircle2, Download, Moon, Sun, Loader2, AlertCircle, History, Info, X, User } from 'lucide-react';
 import { cn } from './lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
@@ -260,7 +260,7 @@ export default function App() {
                       <Scissors size={24} />
                     </div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-base">১০০% প্রাইভেট ও নিরাপদ</h3>
-                    <p>এই অ্যাপটি অডিও কাটার জন্য কোনো সার্ভার ব্যবহার করে না। আপনার আপলোড করা ফাইল সম্পূর্ণ নিরাপদে আপনার পার্সোনাল ব্রাউজারেই প্রসেস করা হয়।</p>
+                    <p>এই অ্যাপটি অডিও কাটার জন্য কোনো সার্ভার ব্যবহার করে না। আপনার আপলোড করা ফাইল সম্পূর্ণ নিরাপদে আপনার পার্সোনাল ডিভাইসে এই অ্যাপেই প্রসেস করা হয়।</p>
                   </div>
                   <div className="p-5 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-2xl border border-purple-100 dark:border-purple-900/30">
                     <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/50 rounded-xl flex items-center justify-center mb-4 text-purple-600 dark:text-purple-400">
@@ -345,7 +345,7 @@ export default function App() {
             যেকোনো অডিও থেকে <span className="font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-blue-600">পছন্দের অংশ কেটে নিন।</span>
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto">
-            ফাইলের যেকোনো অংশ কাটুন সম্পূর্ণ আপনার ব্রাউজার ব্যবহার করে, কোনো ডাটা বাইরে পাঠানো হয় না।
+            ফাইলের যেকোনো অংশ কাটুন সম্পূর্ণ এই অ্যাপ ব্যবহার করে, কোনো ডাটা বাইরে পাঠানো হয় না।
           </p>
         </header>
 
@@ -529,7 +529,7 @@ export default function App() {
                     অডিও কাটা হচ্ছে...
                   </h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    এটি সম্পূর্ণ আপনার ব্রাউজারে চলছে...
+                    এটি সম্পূর্ণ এই অ্যাপেই চলছে...
                   </p>
                 </div>
               </motion.div>

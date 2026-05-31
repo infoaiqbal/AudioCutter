@@ -1,0 +1,35 @@
+{
+  "name": "অডিও কাটার - Audio Cutter",
+  "short_name": "অডিও কাটার",
+  "description": "একটি নিরাপদ ও চমৎকার সম্পূর্ণ অফলাইন প্রাইভেসী-ফ্রেন্ডলি অডিও কাটার টুল যার মাধ্যমে যেকোনো ট্র্যাক মুহুর্তেই কেটে নেওয়া যায়।",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#22d3ee",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "কাটুন",
+      "url": "/",
+      "icons": [{ "src": "/icon.svg", "sizes": "any" }]
+    }
+  ]
+}
