@@ -1,0 +1,6 @@
+{
+  "name": "Vocal Extractor",
+  "description": "An audio tool to extract and isolate vocals from music tracks using browser-based audio processing with a drag-and-drop interface and light/dark theme.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

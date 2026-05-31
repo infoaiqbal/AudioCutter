@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/infoaiqbal/kalpurush@latest/style.css');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Kalpurush", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+}
+
+
+body {
+  font-family: var(--font-sans);
+  background-color: #050507;
+  color: #ffffff;
+}
+
+.custom-audio::-webkit-media-controls-panel {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.custom-audio::-webkit-media-controls-current-time-display,
+.custom-audio::-webkit-media-controls-time-remaining-display {
+  color: #fff;
+}
