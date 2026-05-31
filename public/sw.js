@@ -1,4 +1,4 @@
-const CACHE_NAME = 'audio-cutter-v2';
+const CACHE_NAME = 'audio-cutter-v3';
 const ASSETS = [
   './',
   './index.html',

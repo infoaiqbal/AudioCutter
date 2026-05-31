@@ -13,7 +13,11 @@ const formatTime = (seconds: number) => {
 
 export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    return (localStorage.getItem('theme') as 'light' | 'dark') || 'dark';
+    try {
+      return (localStorage.getItem('theme') as 'light' | 'dark') || 'dark';
+    } catch {
+      return 'dark';
+    }
   });
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [drawerView, setDrawerView] = useState<'menu' | 'history' | 'about' | 'developer'>('menu');
@@ -50,7 +54,9 @@ export default function App() {
     } else {
       document.documentElement.classList.remove('dark');
     }
-    localStorage.setItem('theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch {}
   }, [theme]);
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -124,7 +130,9 @@ export default function App() {
         time: formatTime(endTime - startTime)
       }, ...history].slice(0, 50);
       setHistory(newHistory);
-      localStorage.setItem('audio_cut_history', JSON.stringify(newHistory));
+      try {
+        localStorage.setItem('audio_cut_history', JSON.stringify(newHistory));
+      } catch {}
       
     } catch (err: any) {
       console.error(err);
@@ -243,7 +251,7 @@ export default function App() {
                         </div>
                       ))}
                       <button 
-                        onClick={() => { setHistory([]); localStorage.setItem('audio_cut_history', JSON.stringify([])); }}
+                        onClick={() => { setHistory([]); try { localStorage.setItem('audio_cut_history', JSON.stringify([])); } catch {} }}
                         className="mt-2 text-sm text-red-500 hover:text-red-600 dark:text-red-400 font-medium py-2 text-center"
                       >
                         হিস্ট্রি মুছুন
